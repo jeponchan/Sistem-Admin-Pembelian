@@ -1,0 +1,14 @@
+{
+  "name": "admin-pembelian-toko",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.0",
+    "express-ejs-layouts": "^2.5.1",
+    "mysql2": "^3.9.0"
+  }
+}

@@ -1,0 +1,16 @@
+<h2>Input Pembelian</h2>
+<form method="POST" action="/purchases">
+  <label>Produk</label>
+  <select name="product_id" required>
+    <% products.forEach(p => { %>
+      <option value="<%= p.id %>">
+        <%= p.name %> (Harga: <%= p.price %>)
+      </option>
+    <% }) %>
+  </select>
+
+  <label>Qty</label>
+  <input type="number" name="quantity" min="1" required />
+
+  <button type="submit">Simpan</button>
+</form>

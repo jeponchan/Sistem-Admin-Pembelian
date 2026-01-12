@@ -1,0 +1,36 @@
+<h2>Data Pembelian</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Produk</th>
+      <th>Qty</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Dibuat</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% purchases.forEach(p => { %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.product_name %></td>
+        <td><%= p.quantity %></td>
+        <td><%= p.total_price %></td>
+        <td><%= p.status %></td>
+        <td><%= p.created_at %></td>
+        <td>
+          <% if (p.status === 'CONFIRMED') { %>
+            <form method="POST" action="/purchases/<%= p.id %>/cancel"
+                  onsubmit="return confirm('Batalkan pembelian ini?');">
+              <button type="submit">Cancel</button>
+            </form>
+          <% } else { %>
+            Dibatalkan (<%= p.cancelled_at %>)
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

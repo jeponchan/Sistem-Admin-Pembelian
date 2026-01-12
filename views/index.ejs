@@ -1,0 +1,21 @@
+<h2>Dashboard Stok Produk</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nama</th>
+      <th>Harga</th>
+      <th>Stok</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(p => { %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.name %></td>
+        <td><%= p.price %></td>
+        <td><%= p.quantity %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
